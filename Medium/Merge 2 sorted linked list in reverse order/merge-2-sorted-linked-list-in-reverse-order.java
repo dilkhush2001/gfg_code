@@ -71,21 +71,6 @@ public class MainClass {
 // } Driver Code Ends
 
 
-
-
-/* Structure of the node*/
-/* class Node
-{
-	int data;
-	Node next;
-	
-	Node(int d)
-	{
-		data = d;
-		next = null;
-	}
-} */
-
 class GfG
 {
     Node ans=new Node(-1);
@@ -99,13 +84,6 @@ class GfG
                 temp.next=curr1;
                 curr1=curr1.next;
             }
-            // else if(curr1.data==curr2.data){
-            //     temp.next=curr1;
-            //     temp=temp.next;
-            //     temp.next=curr1;
-            //     curr2=curr2.next;
-            //     curr1=curr1.next;
-            // }
             else{
                 temp.next=curr2;
                 curr2=curr2.next;
