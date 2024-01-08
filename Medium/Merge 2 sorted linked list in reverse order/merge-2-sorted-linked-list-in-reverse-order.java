@@ -88,27 +88,56 @@ public class MainClass {
 
 class GfG
 {
+    Node ans=new Node(-1);
     Node mergeResult(Node node1, Node node2)
     {
-	    ArrayList<Integer> ar=new ArrayList<>();
-	    while(node1!=null){
-	        ar.add(node1.data);
-	        node1=node1.next;
-	    }
-	    while(node2!=null){
-	        ar.add(node2.data);
-	        node2=node2.next;
-	    }
-	    
-	    Collections.sort(ar, Comparator.reverseOrder());
-	    //Node dummy=new Node(0);
-	    //Node curr=dummy;
-	    node2=new Node(0);
-	    node1=node2;
-	    for(int n: ar){
-	        node1.next=new Node(n);
-	        node1=node1.next;
-	    }
-	    return node2.next;
+        Node temp=ans;
+        Node curr1=node1;
+        Node curr2=node2;
+        while(curr1!=null && curr2!=null){
+            if(curr1.data<curr2.data){
+                temp.next=curr1;
+                curr1=curr1.next;
+            }
+            // else if(curr1.data==curr2.data){
+            //     temp.next=curr1;
+            //     temp=temp.next;
+            //     temp.next=curr1;
+            //     curr2=curr2.next;
+            //     curr1=curr1.next;
+            // }
+            else{
+                temp.next=curr2;
+                curr2=curr2.next;
+            }
+            temp=temp.next;
+        }
+        while(curr1!=null){
+            temp.next=curr1;
+            curr1=curr1.next;
+            temp=temp.next;
+        }
+        while(curr2!=null){
+            temp.next=curr2;
+            curr2=curr2.next;
+            temp=temp.next;
+        }
+        
+        ans=ans.next;
+        help();
+        return ans;
+        
+    }
+    private void help(){
+        Node prev=null;
+        Node fast=ans;
+        Node next=ans;
+        while(fast!=null){
+            fast=next.next;
+            next.next=prev;
+            prev=next;
+            next=fast;
+        }
+        ans=prev;
     }
 }
