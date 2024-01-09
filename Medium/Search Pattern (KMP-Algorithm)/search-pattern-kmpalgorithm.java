@@ -32,8 +32,6 @@ class GFG
 // } Driver Code Ends
 
 
-
-
 //User function Template for Java
 
 class Solution
@@ -41,23 +39,19 @@ class Solution
     
     ArrayList<Integer> search(String pat, String txt)
     {
-        ArrayList<Integer> ar=new ArrayList<Integer>();
-        int m = pat.length();
-        int n = txt.length();
-        if(m>n)
-            return ar;
-        
-        for(int i=0;i<=n-m;i++){
-            int j;
-            for( j=0;j<m;j++){
-                if(txt.charAt(i+j)!=pat.charAt(j)){
-                    break;
-                }
+        // your code here
+        int n=txt.length(), m=pat.length();
+        ArrayList<Integer> ans=new ArrayList<Integer>();
+        if(m>n)return ans;
+        int i=0;
+        while(i<n-m+1){
+            int j=0;
+            for(j=0;j<m;j++){
+                if(txt.charAt(i+j)!=pat.charAt(j))break;
             }
-            if(j==m)
-                ar.add(i+1);
+            if(j==m)ans.add(i+1);
+            i++;
         }
-        
-        return ar;
+        return ans;
     }
 }
