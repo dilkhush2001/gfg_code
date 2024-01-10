@@ -13,37 +13,26 @@ import java.util.*;
 //User function Template for Java
 
 class Solution{
-    int longSubarrWthSumDivByK(int arr[], int n, int k)
+    int longSubarrWthSumDivByK(int a[], int n, int k)
     {
-         HashMap<Integer, Integer> map = new HashMap<>();
-        
-        int sum = 0, maxlen = 0;
-        
-        for(int i=0; i<n; i++) {
-            sum += arr[i];
-            int rem=(sum%k);
-            
-            if(rem==0) {
-              maxlen = Math.max(maxlen, i+1); 
+        int max=0, sum=0;
+        Map<Integer, Integer> hm=new HashMap<>();
+        for(int i=0;i<n;i++){
+            sum+=a[i];
+            int rem=sum%k;
+            if(rem==0){
+                max=Math.max(max, i+1);
             }
-            
-            if(rem<0){
-                rem+=k;
-            }
-            
-            if(map.containsKey(rem)) {
-                maxlen = Math.max(maxlen, i - map.get(rem));
-            }
-            else {
-                map.put(rem, i);
-            }
+            if(rem<0)rem+=k;
+            if(hm.containsKey(rem))max=Math.max(max, i-hm.get(rem));
+            else hm.put(rem, i);
         }
+        return max;
         
-        return maxlen;
+       
     }
  
 }
-
 
 
 //{ Driver Code Starts.
