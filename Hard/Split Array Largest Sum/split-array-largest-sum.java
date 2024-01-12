@@ -31,43 +31,44 @@ class GFG {
 
 class Solution {
     int n, k;
-     int splitArray(int[] arr , int N, int K){
+     int splitArray(int[] arr , int N, int K) {
         this.n=N;
         this.k=K;
-        int min=0,s=0;
+        int min=0;
+        int max=0;
         for(int ele : arr){
-            s+=ele;
-            min=Math.max(ele, min);
+            max+=ele;
+            min=Math.max(min, ele);
         }
+        if(k==1)return max;
         if(k==n)return min;
-        if(k==1)return s;
         int ans=min;
-        while(min<=s){
-            int mid=min+(s-min)/2;
-            if(help(arr, mid)){
+        while(min<=max){
+            int mid=min+(max-min)/2;
+            if(help(arr, mid, n)){
+                max=mid-1;
                 ans=mid;
-                s=mid-1;
             }
             else{
                 min=mid+1;
             }
         }
         return ans;
+        
     }
-    private boolean help(int[] arr, int target){
-        int s=0;
-        int count=1;
+    private boolean help(int[] arr, int target, int n){
+        int c=1;
+        int ans=0;
+        int sum=0;
         for(int i=0;i<n;i++){
-            if(s+arr[i]<=target){
-                s+=arr[i];
+            if((sum+arr[i])<=target){
+                sum+=arr[i];
             }
             else{
-                count++;
-                s=arr[i];
+                c+=1;
+                sum=arr[i];
             }
-            
         }
-        
-        return count<=k;
+        return c<=k;
     }
 };
