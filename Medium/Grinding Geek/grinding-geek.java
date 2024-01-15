@@ -28,18 +28,19 @@ public class GFG {
 class Solution {
     int[][] dp;
     public int max_courses(int n, int total, int[] cost) {
+        // code here
         dp=new int[n+1][total+1];
-        for(int temp[] :dp)Arrays.fill(temp,-1);
+        for(int[] temp :dp)Arrays.fill(temp, -1);
         return dfs(n, total, cost, 0);
+        
     }
-    private int dfs(int n , int total , int[] cost, int i){
+    int dfs(int n, int total, int[] cost, int i){
         if(i>=n)return 0;
         if(dp[i][total]!=-1)return dp[i][total];
         if(total>=cost[i]){
-            return dp[i][total]=Math.max(dfs(n, total-(cost[i]-(9*cost[i])/10), cost, i+1)+1, dfs(n, total, cost, i+1) );
+            return dp[i][total]= Math.max(dfs(n, total-(cost[i]-(9*cost[i]/10)), cost, i+1)+1, dfs(n, total, cost, i+1));
         }
-        return  dp[i][total]=dfs(n, total, cost, i+1);
-        
+        return dp[i][total]=dfs(n, total, cost, i+1);
     }
 }
 
