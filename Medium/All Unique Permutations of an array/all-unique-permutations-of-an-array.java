@@ -35,33 +35,30 @@ class GFG {
 // } Driver Code Ends
 
 
-
-
 //User function Template for Java
 
 class Solution {
-    ArrayList<ArrayList<Integer>> ans=new ArrayList<>();
-    ArrayList<ArrayList<Integer>> uniquePerms(ArrayList<Integer> arr , int n) {
+    ArrayList<ArrayList<Integer>> ans=new ArrayList<ArrayList<Integer>>();
+     ArrayList<ArrayList<Integer>> uniquePerms(ArrayList<Integer> arr , int n) {
+        // code here
+        boolean[] vis=new boolean[n];
         Collections.sort(arr);
-        ArrayList<Integer> curr=new ArrayList<>();
-        boolean[] visited=new boolean[arr.size()];
-        helper(arr, curr, visited);
+        helper(arr, new ArrayList<Integer>() , vis, n);
         return ans;
-    }
-    private void helper(ArrayList<Integer> arr, ArrayList<Integer> curr , boolean visited[]){
-        if(curr.size()==arr.size()){
-            ans.add(new ArrayList<Integer>(curr));
-            return ;
-        }
-        for(int i=0;i<arr.size();i++){
-            if(visited[i] || (i>0 && arr.get(i)== arr.get(i-1) && !visited[i-1]))
-                continue;
-            visited[i]=true;
-            curr.add(arr.get(i));
-            helper(arr, curr, visited );
-            curr.remove(curr.size()-1);
-            visited[i]=false;
-        }
         
+    
+    }
+    private void helper(ArrayList<Integer> arr, ArrayList<Integer> curr, boolean[] vis, int n){
+        if(curr.size()==n){
+            ans.add(new ArrayList<>(curr));
+        }
+        for(int i=0;i<n;i++){
+            if(vis[i] || (i>0 && arr.get(i)==arr.get(i-1) && !vis[i-1]))continue;
+            vis[i]=true;
+            curr.add(arr.get(i));
+            helper(arr, curr, vis, n);
+            curr.remove(curr.size()-1);
+            vis[i]=false;
+        }
     }
 };
