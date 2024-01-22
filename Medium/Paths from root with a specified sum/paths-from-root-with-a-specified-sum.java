@@ -137,37 +137,26 @@ class Node {
 
 class Solution
 {
-    public static ArrayList<ArrayList<Integer>> printPaths(Node root, int sum)
+    ArrayList<ArrayList<Integer>>ans=new ArrayList<ArrayList<Integer>>();
+    public  ArrayList<ArrayList<Integer>> printPaths(Node root, int sum)
     {
-        ArrayList<ArrayList<Integer>> ans = new ArrayList<>();
-        helper(root,sum,ans,new ArrayList<Integer>());
-        
+        // code here\
+        helper(new ArrayList<Integer>(), root, sum);
         return ans;
-    }
-    static void helper(Node root, int sum, ArrayList<ArrayList<Integer>> ans,ArrayList<Integer> ds)
-    {
-        sum -= root.data;
-        ds.add(root.data);
-        if(sum == 0)
-        {
-            ans.add(new ArrayList<Integer>(ds));
-        }
-        
-        
-        if(root.left != null)
-        {
-            helper(root.left,sum,ans,ds);
-        }
-        
-        if(root.right != null)
-        {
-            helper(root.right,sum ,ans,ds);
-        }
-        
-        ds.remove(ds.size() - 1);
         
     }
-    
+    private void helper(ArrayList<Integer> curr, Node root, int sum){
+        if(root==null)
+            return ;
+        curr.add(root.data);
+        sum-=root.data;
+        if(sum==0){
+            ans.add(new ArrayList<>(curr));
+        }
+        helper(curr, root.left, sum);
+        helper(curr, root.right, sum);
+        
+        curr.remove(curr.size()-1);
+        
+    }
 }
- 
-
