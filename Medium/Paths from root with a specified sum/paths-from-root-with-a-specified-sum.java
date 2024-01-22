@@ -120,6 +120,8 @@ public class GfG {
 // } Driver Code Ends
 
 
+
+
 //User function Template for Java
 
 /*Tree Node
@@ -140,7 +142,6 @@ class Solution
     ArrayList<ArrayList<Integer>>ans=new ArrayList<ArrayList<Integer>>();
     public  ArrayList<ArrayList<Integer>> printPaths(Node root, int sum)
     {
-        // code here\
         helper(new ArrayList<Integer>(), root, sum);
         return ans;
         
@@ -155,7 +156,6 @@ class Solution
         }
         helper(curr, root.left, sum);
         helper(curr, root.right, sum);
-        
         curr.remove(curr.size()-1);
         
     }
