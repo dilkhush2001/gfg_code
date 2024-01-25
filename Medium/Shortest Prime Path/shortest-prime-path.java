@@ -55,7 +55,6 @@ class Solution{
                 for(int i=0;i<=9;i++){
                     if (j == 0 && i == 0) continue;
                     arr[j]=i;
-                    // System.out.print(intoNum(arr)+" ");
                     int tt = intoNum(arr);
                     
                     if (isPrime(tt) && !set.contains(tt)) {
@@ -64,9 +63,7 @@ class Solution{
                         if (tt==num2) {
                             return step +1;
                         }
-                        
                         q.add(new Pair(intoArr(tt), step + 1));
-                        // System.out.println(intoNum(q.peek().num));
                     }
 
                 }
