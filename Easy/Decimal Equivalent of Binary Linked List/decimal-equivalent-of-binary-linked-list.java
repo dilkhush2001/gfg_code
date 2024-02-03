@@ -86,33 +86,18 @@ class LinkedList
 }
 This is method only submission.  You only need to complete the method. */
 
-class Solution {
-    int mod = (int)1e9+7;
-
-    long DecimalValue(Node head) {
-        head = reverseNode(head);
-        long ans = 0;
-        long pow = 1; 
-        while (head != null) {
-            ans = (ans + head.data * pow) % mod;
-            pow = (pow * 2) % mod;
-            head = head.next;
+class Solution
+{
+   long DecimalValue(Node head)
+   {
+ 	    Node temp=head;
+         long res=0;
+   
+        while(temp!=null)
+        {
+            res=(res*2+temp.data)%(1000000007);
+            temp=temp.next;
         }
-        
-        return ans;
-    }
-
-    Node reverseNode(Node node) {
-        Node head = node;
-        Node prev = null, next = head, fast = head;
-        
-        while (next != null) {
-            fast = next.next;
-            next.next = prev;
-            prev = next;
-            next = fast;
-        }
-        
-        return prev;
-    }
+        return res;
+   }
 }
