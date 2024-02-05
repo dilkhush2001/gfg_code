@@ -80,18 +80,7 @@ public class Main {
 // } Driver Code Ends
 
 
-
-
-/*Complete the function below
-Node is as follows:
-class Node{
-	int data;
-	Node next;
-	Node(int d){
-		data=d;
-		next=null;
-	}
-}*/
+//User function Template for Java
 class Solution {
     public Node sortedInsert(Node head, int data) {
         Node insertNode = new Node(data);
