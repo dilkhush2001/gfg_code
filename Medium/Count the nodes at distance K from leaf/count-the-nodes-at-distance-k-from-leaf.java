@@ -100,8 +100,6 @@ class GFG
 // } Driver Code Ends
 
 
-
-
 //User function Template for Java
 
 // class Node  
@@ -115,6 +113,7 @@ class GFG
 //         left = right = null; 
 //     } 
 // }
+
 class Pair{
     int x, y;
     Pair(int x, int y){
