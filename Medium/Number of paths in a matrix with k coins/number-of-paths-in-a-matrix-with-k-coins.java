@@ -34,34 +34,22 @@ class GFG
 // } Driver Code Ends
 
 
-
-
 //User function Template for Java
 
 class Solution {
     int n, k;
-    long ans=0;
-    boolean[][] vis;
     long numberOfPath(int N, int K, int [][]arr) {
-        // code here
         this.n=N;
         this.k=K;
-        vis=new boolean[n][n];
-        helper(0, 0, arr, 0);
-        return ans;
-        
+        return helper(0, 0, arr, 0);
     }
-    private void helper(int i, int j, int[][] arr, int sum){
+    private long helper(int i, int j, int[][] arr, int sum){
         if(i==n || j==n || sum>k)
-            return ;
+            return 0 ;
         sum+=arr[i][j];
-        //vis[i][j]=true;
         if(sum==k && i==n-1 && j==n-1){
-            ans++;
+           return 1;
         }
-        helper(i, j+1 , arr, sum);
-        helper(i+1, j, arr, sum);
-       // vis[i][j]=false;
-        
+        return helper(i, j+1 , arr, sum)+helper(i+1, j, arr, sum);
     }
 }
