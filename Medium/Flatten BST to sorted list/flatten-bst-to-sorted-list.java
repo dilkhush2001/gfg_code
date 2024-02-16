@@ -77,25 +77,20 @@ public class GFG
 class Solution {
     Node temp=new Node(-99);
     Node curr=temp;
-    boolean f=false;
     public Node flattenBST(Node root) {
-        // Code here
         dfs(root);
         temp=temp.right;
         curr.left=null;
         curr.right=null;
         return temp;
-        
     }
     void dfs(Node root){
         if(root==null){
-            f=true;
             return ;
         }
         dfs(root.left);
-        if(f)makeItTRee(root.data);
+        makeItTRee(root.data);
         dfs(root.right);
-        
     }
     void makeItTRee(int data){
         Node node=new Node(data);
