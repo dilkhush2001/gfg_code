@@ -28,6 +28,9 @@ public class GfG
 }
 // } Driver Code Ends
 
+
+//User function Template for Java
+
 class Solution
 {
     public static int wordBreak(int n, String s, ArrayList<String> dic )
