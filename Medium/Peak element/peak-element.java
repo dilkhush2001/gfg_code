@@ -43,7 +43,6 @@ class PeakElement{
 
 
 /*Complete the function below*/
-
 class Solution
 {
 	// Function to find the peak element
