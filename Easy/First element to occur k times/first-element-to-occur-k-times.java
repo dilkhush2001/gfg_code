@@ -24,6 +24,7 @@ public class GfG {
 // } Driver Code Ends
 
 
+
 class Solution
 {
     public int firstElementKTime(int n, int k, int[] a) { 
