@@ -27,7 +27,6 @@ class GfG
 
 
 //User function Template for Java
-
 class Solution
 {
     public char help(char h,int r,int n){
