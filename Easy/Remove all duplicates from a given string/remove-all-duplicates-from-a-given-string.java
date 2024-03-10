@@ -26,7 +26,6 @@ public class Main {
 
 //User function Template for Java
 
-
 class Solution {
     String removeDuplicates(String str) {
         boolean[] arr=new boolean[257];
@@ -41,4 +40,3 @@ class Solution {
         return sb.toString();
     }
 }
-
