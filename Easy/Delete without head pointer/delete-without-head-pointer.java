@@ -93,8 +93,6 @@ class Delete_Node
 // } Driver Code Ends
 
 
-
-
 /*
 class Node
 {
@@ -118,4 +116,3 @@ class Solution
     }
       
 }
-
