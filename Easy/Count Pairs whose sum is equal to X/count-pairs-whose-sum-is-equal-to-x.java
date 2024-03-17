@@ -63,16 +63,12 @@ class Node
 
 class Solution {
 
-    public static int countPairs(LinkedList<Integer> head1, LinkedList<Integer> head2,
+    public  int countPairs(LinkedList<Integer> head1, LinkedList<Integer> head2,
                           int x) {
-        // add your code here
-        HashSet<Integer> hs=new HashSet<>();
-        int c=0;
-        for(int i : head1)hs.add(i);
-        for(int i : head2){
-            int val=x-i;
-            if(hs.contains(val))c++;
-        }
+        int c=0;                 
+        Set<Integer> set=new HashSet<>();
+        for(int ele : head1)set.add(x-ele);
+        for(int ele : head2)if(set.contains(ele))c++;
         return c;
         
     }
