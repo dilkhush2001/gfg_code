@@ -121,8 +121,6 @@ class Node{
     }
 }
 */
-
-
 class Tree {
     public static ArrayList <Integer> diagonalSum(Node root) 
     {
