@@ -14,12 +14,11 @@ class Solution{
     int grayToBinary(int n)
     {
         
-        int ans=0;
+       int ans=0;
         for(;n;n>>=1){
             ans^=n;
         }
         return ans;
-        
     }
 };
 
