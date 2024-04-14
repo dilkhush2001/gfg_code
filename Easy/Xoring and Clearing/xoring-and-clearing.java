@@ -23,8 +23,6 @@ public class GFG {
 
 // } Driver Code Ends
 
-
-// User function Template for Java
 class Solution {
     public void printArr(int n, int arr[]) {
         for(int i=0;i<n;i++)System.out.print(arr[i]+" ");
