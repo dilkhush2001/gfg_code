@@ -13,7 +13,6 @@ import java.util.*;
 //User function Template for Java
 
 
-
 class Solution
 {
     ArrayList<Integer> findMissing(int A[], int B[], int N, int M)
@@ -30,8 +29,6 @@ class Solution
         return ar;
     }
 }
-
-
 
 //{ Driver Code Starts.
 
