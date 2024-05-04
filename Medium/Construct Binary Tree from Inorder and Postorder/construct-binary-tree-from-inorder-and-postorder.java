@@ -46,8 +46,6 @@ class InorderPostorderToTree {
 // } Driver Code Ends
 
 
-
-
 /* Tree node structure
 class Node
 {
@@ -62,7 +60,6 @@ class Node
         right = null;
     }
 }*/
-
 
 class GfG
 {
