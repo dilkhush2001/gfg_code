@@ -128,28 +128,17 @@ class Tree
 {
     public ArrayList<Integer> reverseLevelOrder(Node node) 
     {
+        Stack<Node> st=new Stack<>();
         Queue<Node> q=new LinkedList<>();
-        Stack<ArrayList<Integer>> st=new Stack();
-        
         q.add(node);
         while(!q.isEmpty()){
-            int n=q.size();
-            ArrayList<Integer>  list=new ArrayList<Integer>();
-            for(int i=0;i<n;i++){
-                Node temp=q.poll();
-                list.add(temp.data);
-                if(temp.left!=null)q.add(temp.left);
-                if(temp.right!=null)q.add(temp.right);
-            }
-            st.add(list);
+            Node temp=q.poll();
+            st.push(temp);
+            if(temp.right!=null)q.add(temp.right);
+            if(temp.left!=null)q.add(temp.left);
         }
-        ArrayList<Integer>  ans=new ArrayList<Integer>();
-        while(!st.isEmpty()){
-            for(int ele : st.pop())ans.add(ele);
-        }
-        
+        ArrayList<Integer> ans=new ArrayList<>();
+        while(!st.isEmpty())ans.add(st.pop().data);
         return ans;
-        
-        
     }
 }      
