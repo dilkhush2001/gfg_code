@@ -37,16 +37,17 @@ class GFG {
 
 class Solution {
     int[][] rotateMatrix(int k, int mat[][]) {
-        int c=mat[0].length;
-        int r=mat.length;
-        k%=c;
-        int a[][]=new int[r][c];
-        for(int i=0;i<r;i++){
-            for(int j=0;j<c;j++){
-                int nc=(j-k+c)%c;
-                a[i][nc]=mat[i][j];
+        int n=mat.length;
+        int m=mat[0].length;
+        k%=m;
+        int[][] arr=new int[n][m];
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                int idx=(j-k+m)%m;
+                arr[i][idx]=mat[i][j];
             }
         }
-        return a;
+        return arr;
     }
 }
+   
