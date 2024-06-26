@@ -68,7 +68,7 @@ class Solution
         vis=new boolean[V];
         for(int i=0;i<V;i++){
             if(!vis[i]){
-                find(0, adj);
+                find(i, adj);
             }
         }
         int i=0;
