@@ -30,31 +30,46 @@ class Check_IsToepliz {
 
 class Solution {
     /*You are required to complete this method*/
-    int n, m;
-    boolean isToeplitz(int mat[][]) {
-        if (mat == null || mat.length == 0) {
+    public static boolean isToeplitz(int[][] matrix) {
+        if (matrix == null || matrix.length == 0) {
             return true;
         }
-        this.n=mat.length;
-        this.m=mat[0].length;
-        for(int i=0;i<m;i++){
-            if(!check(mat, 0, i))return false;
+
+        int rows = matrix.length;
+        int cols = matrix[0].length;
+
+        // Check all diagonals that start from the first row
+        for (int col = 0; col < cols; col++) {
+            if (!checkDiagonal(matrix, 0, col)) {
+                return false;
+            }
         }
-        
-        for(int j=1;j<n;j++){
-            if(!check(mat, j, 0))return false;
+
+        // Check all diagonals that start from the first column
+        for (int row = 1; row < rows; row++) {
+            if (!checkDiagonal(matrix, row, 0)) {
+                return false;
+            }
         }
-        
+
         return true;
     }
-    private boolean check(int[][] mat, int x, int y){
-        int data=mat[x][y];
+
+    // Helper function to check a diagonal starting from (row, col)
+    private static boolean checkDiagonal(int[][] matrix, int row, int col) {
+        int value = matrix[row][col];
+        int rows = matrix.length;
+        int cols = matrix[0].length;
+
+        while (row < rows && col < cols) {
+            if (matrix[row][col] != value) {
+                return false;
+            }
+            row++;
+            col++;
+        }
+
+        return true;
+    }
     
-        while(x<n && y<m){
-            if(mat[x][y]!=data)return false;
-            x++;
-            y++;
-        }
-        return true;
-    }
 }
