@@ -68,19 +68,18 @@ class GFG {
 // } Driver Code Ends
 
 
-
-
 /*
 class Node {
     int data;
     Node next;
-    
+
     public Node(int data){
         this.data = data;
         this.next = null;
     }
 }*/
 
+// class Solution {
 class Solution {
     public static int Len(Node n){
         Node current=n;
