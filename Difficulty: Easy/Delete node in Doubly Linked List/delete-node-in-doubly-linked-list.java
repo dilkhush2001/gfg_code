@@ -83,7 +83,6 @@ class Solution {
             curr=curr.next;
             x--;
         }
-        
         if(curr.next.next!=null){
             Node temp=curr.next.next;
             
