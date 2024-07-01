@@ -26,29 +26,7 @@ class Node {
 
 
 // } Driver Code Ends
-
-
-/*class Tree{
-int data;
-    Tree left;
-    Tree right;
-    Tree(int d){
-        data=d;
-        left=null;
-        right=null;
-    }
-}
-
-class Node {
-    int data;
-    Node next;
-    Node(int d) {
-        data = d;
-        next = null;
-    }
-}*/
-
-
+// User function Template for Java
 class Solution 
 {
     //Function to make binary tree from linked list.
@@ -74,7 +52,8 @@ class Solution
         }
         return root;
     }
-}  
+}
+
 
 //{ Driver Code Starts.
 class GFG {
