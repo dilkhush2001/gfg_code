@@ -109,28 +109,11 @@ class GFG {
 // } Driver Code Ends
 
 
-
-
-//User function Template for Java
-
-/*
-class Node {
-    int data;
-    Node left, right;
-    
-    public Node(int data){
-        this.data = data;
-    }
-}
-*/
-
-class Solution{
-    
-    public List<Node> printAllDups(Node root)
-    {
-        List<Node> ans=new ArrayList<Node>();
-        HashMap<String,Integer> hm=new HashMap<>();
-        helper(root, ans, hm);
+class Solution {
+    List<Node> ans=new ArrayList<Node>();
+    HashMap<String , Integer> hm=new HashMap<>();
+    public List<Node> printAllDups(Node root) {
+        helper(root);
         Collections.sort(ans, new Comparator<Node>(){
             @Override
             public int compare(Node a, Node b){
@@ -143,22 +126,16 @@ class Solution{
             
             }
         });
-       return ans;
+        return ans;
     }
-    
-    public String helper(Node root, List<Node> ans, HashMap<String,Integer> hm){
-        if(root==null)
-            return "#";
-        String left=helper(root.left, ans, hm);
-        String right=helper(root.right, ans, hm);
-        
-        String s=root.data+","+left+","+right;
-        hm.put(s, hm.getOrDefault(s,0)+1);
-        if(hm.get(s)==2){
-            ans.add(root);
-        }
+    private String helper(Node root){
+        if(root==null)return "&&";
+        String left=helper(root.left);
+        String right=helper(root.right);
+        String s=root.data+"+"+left+"+"+right;
+        hm.put(s, hm.getOrDefault(s, 0)+1);
+        if(hm.get(s)==2)ans.add(root);
         
         return s;
     }
-    
 }
