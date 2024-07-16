@@ -21,7 +21,6 @@ class GFG {
 }
 // } Driver Code Ends
 
-
 class Solution {
     public String printString(String s, char ch, int count) {
         int i=0;
