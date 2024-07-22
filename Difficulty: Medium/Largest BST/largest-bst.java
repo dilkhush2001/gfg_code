@@ -97,8 +97,6 @@ class GFG
 // } Driver Code Ends
 
 
-
-
 //User function Template for Java
 
 // class Node  
@@ -114,43 +112,33 @@ class GFG
 // }
 
 
-class Solution{
-    boolean f=true;
-    void array(Node root, ArrayList<Integer> ar){
-        if(root==null){
-            return ;
+class Solution {
+    class NodeValue {
+        int minNode, maxNode, maxSize;
+        NodeValue(int minNode, int maxNode, int maxSize) {
+            this.minNode = minNode;
+            this.maxNode = maxNode;
+            this.maxSize = maxSize;
         }
-        array(root.left, ar);
-        ar.add(root.data);
-        if(ar.size()>=2){
-            if(ar.get(ar.size()-2)>=ar.get(ar.size()-1)){
-                f=false;
-                return ;
-            }
-        }
-        array(root.right, ar);
-    }
-    int max=1;  
-    void helper(Node root){
-        if(root==null)
-            return ;
-        ArrayList<Integer>ar=new ArrayList<>();
-         f=true;
-        array(root, ar);
-        if(f){
-           if(ar.size()>max){
-               max=ar.size();
-           } 
-        }
-        helper(root.left);
-        helper(root.right);
-    }
-     int largestBst(Node root)
-    {
-        helper(root);
-        //helper(root.right);
-        return max;
-        
     }
     
+    public int largestBst(Node root) {
+        return largestBstUtil(root).maxSize;
+    }
+    
+    private NodeValue largestBstUtil(Node root) {
+        if (root == null) {
+            return new NodeValue(Integer.MAX_VALUE, Integer.MIN_VALUE, 0);
+        }
+        NodeValue left = largestBstUtil(root.left);
+        NodeValue right = largestBstUtil(root.right);
+        if (left.maxNode < root.data && root.data < right.minNode) {
+            return new NodeValue(
+                Math.min(root.data, left.minNode),
+                Math.max(root.data, right.maxNode),
+                left.maxSize + right.maxSize + 1
+            );
+        }
+        return new NodeValue(Integer.MIN_VALUE, Integer.MAX_VALUE, Math.max(left.maxSize, right.maxSize));
+    }
 }
