@@ -109,13 +109,13 @@ class GfG {
 
 class Solution {
     // Function to check whether a Binary Tree is BST or not.
-    ArrayList<Integer> list=new ArrayList<>();
     boolean isBST(Node root) {
-        if(root==null)return true;
-        boolean f=isBST(root.left);
-        if(list.size()>0 && list.get(list.size()-1)>=root.data)return false;
-        list.add(root.data);
-        f &=isBST(root.right);
-        return f;
+        // code here.
+        return check(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+    }
+    private boolean check(Node root, int min, int max){
+        if(root==null)return true ;
+        if(root.data<=min || root.data>=max)return false;
+        return check(root.left, min, root.data) && check(root.right, root.data, max);
     }
 }
