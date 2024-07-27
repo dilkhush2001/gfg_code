@@ -21,6 +21,7 @@ class GFG{
 
 //User function Template for Java
 
+
 class Solution{
     static int countMin(String str)
     {
