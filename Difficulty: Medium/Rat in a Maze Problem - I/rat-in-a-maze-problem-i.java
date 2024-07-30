@@ -30,11 +30,6 @@ class Rat {
 // } Driver Code Ends
 
 
-
-
-// User function Template for Java
-
-// m is the given matrix and n is the order of matrix
 class Solution {
     final  int[] dx={1,-1,0,0};
     final  int[] dy={0,0,1,-1};
