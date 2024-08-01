@@ -27,7 +27,7 @@ class GFG {
 
 
 class Solution {
-    // Function to return a list of integers denoting spiral traversal of matrix.
+     // Function to return a list of integers denoting spiral traversal of matrix.
     public ArrayList<Integer> spirallyTraverse(int matrix[][]) {
         int r=matrix.length, c=matrix[0].length;
          ArrayList<Integer> ar=new ArrayList<Integer>();
