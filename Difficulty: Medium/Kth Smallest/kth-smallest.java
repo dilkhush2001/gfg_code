@@ -39,10 +39,7 @@ class GFG {
 // } Driver Code Ends
 
 
-
-
-//User function Template for Java
-
+// User function Template for Java
 class Solution{
     public static int kthSmallest(int[] arr,int k) 
     {   
