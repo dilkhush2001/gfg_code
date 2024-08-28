@@ -9,6 +9,7 @@ import java.util.Map.Entry;
 
 // } Driver Code Ends
 // User function Template for Java
+
 class Pair{
     int ele , freq;
     Pair(int ele , int freq){
