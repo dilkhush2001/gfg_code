@@ -76,29 +76,18 @@ class Solution {
     public int countNodesinLoop(Node head) {
         Node slow = head;
         Node fast = head;
-
-        // Detect loop using Floyd’s Cycle-Finding Algorithm
         while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
-
-            // If slow and fast meet at some point then there is a loop
             if (slow == fast) {
-                // Loop detected, now count the number of nodes in the loop
                 return countLoopLength(slow);
             }
         }
-
-        // No loop detected
         return 0;
     }
-
-    // Function to count the number of nodes in the loop
     private int countLoopLength(Node node) {
         int count = 1;
         Node temp = node;
-
-        // Move till we return to the same node
         while (temp.next != node) {
             count++;
             temp = temp.next;
