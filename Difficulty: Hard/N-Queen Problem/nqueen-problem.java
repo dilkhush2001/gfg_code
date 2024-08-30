@@ -30,6 +30,9 @@ class GFG {
 }
 // } Driver Code Ends
 
+
+// User function Template for Java
+
 class Solution {
     ArrayList<ArrayList<Integer>> ans = new ArrayList<>();
 
@@ -58,7 +61,6 @@ class Solution {
         int col = board.size();
         for (int i = 0; i < col; i++) {
             int placedRow = board.get(i);
-            // Check if the queen is in the same row or diagonal
             if (placedRow == row || Math.abs(placedRow - row) == Math.abs(i - col)) {
                 return false;
             }
