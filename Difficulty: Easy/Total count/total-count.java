@@ -10,7 +10,6 @@ import java.util.*;
 
 class Solution {
     int totalCount(int k, int[] arr) {
-        // code here]
         int res=0;
         for(int i=0;i<arr.length;i++){
             res+= arr[i]%k==0 ? arr[i]/k : arr[i]/k+1;
