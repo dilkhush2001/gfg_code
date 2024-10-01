@@ -13,12 +13,10 @@ class Node {
 
 
 // } Driver Code Ends
-
-
 /*Node is defined as
 class Node
 {
-    int data; 
+    int data;
     Node next;
     Node(int data) {
         this.data=data;
