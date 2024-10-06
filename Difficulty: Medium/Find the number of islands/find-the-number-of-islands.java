@@ -27,10 +27,6 @@ class GFG {
 // } Driver Code Ends
 
 
-
-// import java.util.LinkedList;
-// import java.util.Queue;
-
 class Solution {
     public int numIslands(char[][] grid) {
         if (grid == null || grid.length == 0) return 0;
@@ -70,7 +66,7 @@ class Solution {
                 // Check bounds and if it's part of the island
                 if (newX >= 0 && newX < m && newY >= 0 && newY < n && grid[newX][newY] == '1') {
                     queue.offer(new int[]{newX, newY});
-                    grid[newX][newY] = '0'; // Mark as visited
+                    grid[newX][newY] = '0';
                 }
             }
         }
