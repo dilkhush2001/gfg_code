@@ -54,7 +54,6 @@ class GFG {
 // } Driver Code Ends
 
 
-
 class Solution {
     public static int pairsum(int[] arr) {
         
@@ -63,7 +62,6 @@ class Solution {
             if(f<i){
                 s=f;
                 f=i;
-                
             }
             else if(i>s)s=i;
         }
