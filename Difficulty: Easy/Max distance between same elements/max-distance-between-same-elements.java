@@ -4,20 +4,24 @@ import java.util.Scanner;
 
 
 // } Driver Code Ends
+
 class Solution {
     public int maxDistance(int[] arr) {
-        // Code here
-        Map<Integer, Integer> hm=new HashMap<>();
-        for(int t=0 ;t<arr.length;t++){
-            hm.put(arr[t], t);
+        int n = arr.length;
+        Map<Integer, Integer> mp = new HashMap<>();
+        int max_dist = 0;
+        for (int i = 0; i < n; i++) {
+            if (!mp.containsKey(arr[i])) {
+                mp.put(arr[i], i);
+            } else {
+                max_dist = Math.max(max_dist, i - mp.get(arr[i]));
+            }
         }
-        int max=0;
-        for(int i=0;i<arr.length;i++){
-            max=Math.max(max, hm.get(arr[i])-i);
-        }
-        return max;
+        return max_dist;
     }
 }
+
+
 
 //{ Driver Code Starts.
 public class Main {
