@@ -25,13 +25,9 @@ class GFG {
 
 class Solution {
     public int pairWithMaxSum(int[] arr) {
-        // code here
-        if(arr.length<2)return -1;
-        
         int max=0;
-        for(int i=1;i<arr.length;i++){
-            max=Math.max(arr[i]+arr[i-1], max);
-        }
+        if(arr.length<2)return -1;
+        for(int i=1;i<arr.length;i++)max=Math.max(arr[i]+arr[i-1], max);
         return max;
     }
 }
