@@ -33,9 +33,7 @@ public class Main {
 
 // } Driver Code Ends
 
-
 class Solution {
-
     public boolean checkSorted(List<Integer> arr) {
         // code here
         int i=0, j=arr.size()-1, c=2;
