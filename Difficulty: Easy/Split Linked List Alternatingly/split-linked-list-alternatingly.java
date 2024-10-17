@@ -55,21 +55,6 @@ public class Main {
 // } Driver Code Ends
 
 
-// User function Template for Java
-/*
-struct Node
-{
-    int data;
-    struct Node* next;
-
-    Node(int x){
-        data = x;
-        next = NULL;
-    }
-
-};
-*/
-
 class Solution {
     // Function to append a new node with newData at the end of a linked list
     Node[] alternatingSplitList(Node head) {
