@@ -12,9 +12,7 @@ class Solution {
     int getSingle(int arr[]) {
         // code here
         int xor=0;
-        for(int ele : arr){
-            xor ^=ele;
-        }
+        for(int ele : arr)xor ^=ele;
         return xor;
     }
 }
