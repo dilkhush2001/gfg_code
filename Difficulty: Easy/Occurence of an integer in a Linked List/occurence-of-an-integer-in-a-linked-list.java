@@ -14,8 +14,6 @@ class Node {
 
 
 // } Driver Code Ends
-
-
 /*node class of the linked list
 class Node
 {
@@ -33,13 +31,12 @@ class Solution
     public static int count(Node head, int key)
     {
         int c=0;
-        Node current=head;{
+        Node current=head;
             while(current!=null){
                 if(current.data==key)
                     c++;
                 current=current.next;
             }
-        }
         return c;
     }
 }
