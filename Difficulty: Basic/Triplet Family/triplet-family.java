@@ -6,20 +6,61 @@ import java.util.*;
 
 
 // } Driver Code Ends
+
 class Solution {
+    
+boolean search(int sum, int start,  
+                      int end, int arr[]) 
+{ 
+    while (start <= end)  
+    { 
+        int mid = (start + end) / 2; 
+        if (arr[mid] == sum)  
+        { 
+            return true; 
+        } 
+        else if (arr[mid] > sum) 
+        { 
+            end = mid - 1; 
+        } 
+        else
+        { 
+            start = mid + 1; 
+        } 
+    } 
+    return false; 
+} 
+
     public boolean findTriplet(int[] arr) {
-        Set<Integer> set=new HashSet<>();
-        for(int ele : arr){
-            set.add(ele);
-        }
-        for(int i=0;i<arr.length-1;i++){
-            for(int j=i+1;j<arr.length;j++){
-                if(set.contains(arr[i]+arr[j]))return true;
-            }
-        }
-        return false;
+        
+            int n = arr.length;
+       Arrays.sort(arr); 
+  
+    // Initialising nested loops 
+    for(int i = 0; i < n; i++)  
+    { 
+        for(int j = i + 1; j < n; j++)  
+        { 
+              
+            // Finding the sum of the numbers 
+            if (search((arr[i] + arr[j]), j, n - 1, arr))  
+            { 
+                  
+                // Printing out the first triplet 
+                return true;
+            } 
+        } 
+    } 
+    
+    return false;
+        
     }
 }
+
+
+
+
+
 
 //{ Driver Code Starts.
 
