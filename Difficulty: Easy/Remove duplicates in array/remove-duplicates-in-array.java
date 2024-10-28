@@ -36,7 +36,6 @@ System.out.println("~");
 
 // } Driver Code Ends
 
-
 class Solution {
     ArrayList<Integer> removeDuplicate(int arr[]) {
         ArrayList<Integer> ans=new ArrayList<Integer>();
