@@ -60,7 +60,6 @@ System.out.println("~");
 }
 // } Driver Code Ends
 
-
 class GfG {
     public static Node quickSort(Node head) {
         if (head == null || head.next == null)
