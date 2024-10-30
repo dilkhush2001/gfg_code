@@ -38,8 +38,6 @@ public class Main {
 
 // } Driver Code Ends
 
-
-// User function Template for Java
 class Solution {
     int countPairsWithDiffK(int[] arr, int k) {
         Map<Integer, Integer> hm=new HashMap<>();
