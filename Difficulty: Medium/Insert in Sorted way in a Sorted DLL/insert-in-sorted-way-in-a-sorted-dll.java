@@ -61,21 +61,6 @@ System.out.println("~");
 
 // } Driver Code Ends
 
-
-
-
-/*class of the node of the DLL is as
-class Node {
-	int data;
-    Node prev, next;
-    Node(int item)
-    {data = item;
-        next = prev = null;
-    }
-}
-*/
-// function should insert a new node in sorted way in
-// a sorted doubly linked list
 class Solution
 {
     public static Node sortedInsert(Node head, int x)
