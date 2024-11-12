@@ -42,11 +42,8 @@ class Solution {
             a[tt[0]]+=1;
             a[tt[1]]=-1;
         }
-        
         for(int i=1;i<a.length;i++){
             a[i]=a[i]+a[i-1];
-        }
-        for(int i=0;i<a.length;i++){
             if(a[i]>1 && !set.contains(i))return false;
         }
         return true;
