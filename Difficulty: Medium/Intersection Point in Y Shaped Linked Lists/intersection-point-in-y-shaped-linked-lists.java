@@ -103,8 +103,6 @@ System.out.println("~");
 // } Driver Code Ends
 
 
-
-
 /* Node of a linked list
  class Node {
    int data;
@@ -116,7 +114,6 @@ class LinkedList
 {
     Node head;  // head of list
 }*/
-
 class Intersect
 {
     //Function to find intersection point in Y shaped Linked Lists.
@@ -150,5 +147,3 @@ class Intersect
         return -1; 
 	}
 }
-
-
