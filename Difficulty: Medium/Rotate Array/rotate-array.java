@@ -40,7 +40,6 @@ class GFG {
 // } Driver Code Ends
 
 
-// User function Template for Java
 
 class Solution {
     // Function to rotate an array by d elements in counter-clockwise direction.
