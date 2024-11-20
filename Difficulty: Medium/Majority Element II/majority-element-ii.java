@@ -38,18 +38,33 @@ class Solution {
     // Function to find the majority elements in the array
     public List<Integer> findMajority(int[] nums) {
         // Your code goes here.
-        int n=nums.length;
         List<Integer> ans=new ArrayList<Integer>();
-        Arrays.sort(nums);
-        int c=1;
-        for(int i=1;i<nums.length;i++){
-            if(nums[i]==nums[i-1])c++;
-            else{
-                if(c>n/3)ans.add(nums[i-1]);
-                c=1;
+        int n1=0,  n2=0, c1=0, c2=0;
+        for(int ele : nums){
+            if(ele==n1)c1++;
+            else if(ele==n2)c2++;
+            else if(c1==0){
+                n1=ele;
+                c1=1;
+            }
+            else if(c2==0){
+                n2=ele;
+                c2=1;
+            }
+            else {
+                c1--;
+                c2--;
             }
         }
-        if(c>n/3)ans.add(nums[n-1]);
+        c1=0; c2=0;
+        for(int ele : nums){
+            if(ele==n1)c1++;
+            else if(ele==n2)c2++;
+        }
+        if(c1>nums.length/3)ans.add(n1);
+        if(c2>nums.length/3)ans.add(n2);
+        
+        Collections.sort(ans);
         return ans;
     }
 }
