@@ -33,6 +33,8 @@ public class Main {
 // } Driver Code Ends
 
 
+
+
 // User function Template for Java
 
 class Solution {
@@ -41,10 +43,9 @@ class Solution {
         Arrays.sort(arr);
         int n=arr.length, min=arr[n-1]-arr[0];
         for(int i=1;i<n;i++){
-            if(arr[i] < k) continue;
+            if (arr[i] - k < 0) continue;  
             int mi=Math.min(arr[0]+k, arr[i]-k);
             int mx=Math.max(arr[n-1]-k, arr[i-1]+k);
-            
             min=Math.min(min, mx-mi);
         }
         return min;
