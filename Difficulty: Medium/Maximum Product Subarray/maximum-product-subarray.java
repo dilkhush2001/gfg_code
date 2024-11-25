@@ -21,9 +21,6 @@ public class Main {
 
 // } Driver Code Ends
 
-
-
-
 class Solution {
     // Function to find maximum product subarray
     int maxProduct(int[] arr) {
