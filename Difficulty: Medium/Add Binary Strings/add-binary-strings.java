@@ -22,10 +22,6 @@ class GFG {
 // } Driver Code Ends
 
 
-
-
-//User function Template for Java
-
 class Solution {
     String addBinary(String A, String B) {
         StringBuilder sb = new StringBuilder(); 
