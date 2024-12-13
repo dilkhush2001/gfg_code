@@ -31,9 +31,16 @@ public class Main {
 
 class Solution {
     public int findMin(int[] arr) {
-        // complete the function here
-        int min=(int)1e9+7;
-        for(int ele : arr)min=Math.min(min, ele);
-        return min;
+        int l=0, h=arr.length-1;
+        while(l<h){
+            if(arr[l]<arr[h])return arr[l];
+            
+            int mid=(l+h)/2;
+            if(arr[mid]>arr[h]){
+                l=mid+1;
+            }
+            else h=mid;
+        }
+        return arr[h];
     }
 }
