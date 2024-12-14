@@ -37,9 +37,6 @@ public class GFG {
 }
 // } Driver Code Ends
 
-
-// User function Template for Java
-
 class Solution {
     int search(int[] arr, int key) {
         int l = 0, h = arr.length - 1;
