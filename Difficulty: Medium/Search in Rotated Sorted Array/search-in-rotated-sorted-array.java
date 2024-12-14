@@ -29,6 +29,8 @@ public class GFG {
             int key = Integer.parseInt(in.readLine().trim());
 
             out.println(new Solution().search(arr, key));
+
+            out.println("~");
         }
         out.close();
     }
@@ -40,9 +42,32 @@ public class GFG {
 
 class Solution {
     int search(int[] arr, int key) {
-        for(int i=0;i<arr.length;i++){
-            if(arr[i]==key)return i;
+        int l = 0, h = arr.length - 1;
+        
+        while (l <= h) {
+            int mid = l + (h - l) / 2;
+            
+            // Check if the mid element is the key
+            if (arr[mid] == key) {
+                return mid;
+            }
+            
+            // Determine which half is sorted
+            if (arr[l] <= arr[mid]) { // Left half is sorted
+                if (key >= arr[l] && key < arr[mid]) {
+                    h = mid - 1; // Key lies in the sorted left half
+                } else {
+                    l = mid + 1; // Key lies in the right half
+                }
+            } else { // Right half is sorted
+                if (key > arr[mid] && key <= arr[h]) {
+                    l = mid + 1; // Key lies in the sorted right half
+                } else {
+                    h = mid - 1; // Key lies in the left half
+                }
+            }
         }
-        return -1;
+        
+        return -1; // Key not found
     }
 }
