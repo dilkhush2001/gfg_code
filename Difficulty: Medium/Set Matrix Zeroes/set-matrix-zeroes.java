@@ -34,8 +34,6 @@ public class Main {
 
 // } Driver Code Ends
 
-
-//Back-end complete function Template for Java
 class Solution {
     public void setMatrixZeroes(int[][] mat) {
         int n=mat.length, m=mat[0].length;
