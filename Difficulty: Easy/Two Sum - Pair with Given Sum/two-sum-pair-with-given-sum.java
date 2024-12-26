@@ -34,7 +34,6 @@ public class Main {
 
 
 // User function Template for Java
-
 class Solution {
     boolean twoSum(int arr[], int target) {
         // code here
