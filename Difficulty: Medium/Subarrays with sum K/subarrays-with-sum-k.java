@@ -39,7 +39,6 @@ public class Main {
 // } Driver Code Ends
 
 
-// User function Template for Java
 class Solution {
     public int countSubarrays(int arr[], int k) {
         // code here
