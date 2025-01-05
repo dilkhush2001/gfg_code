@@ -6,6 +6,7 @@ import java.util.*;
 
 // } Driver Code Ends
 // User function Template for Java
+// https://youtube.com/shorts/kVmb9QfSO-U?si=ccS8n3tEXLHF0_ZL
 class Solution {
     int countPairs(int arr[], int target) {
         Arrays.sort(arr);
