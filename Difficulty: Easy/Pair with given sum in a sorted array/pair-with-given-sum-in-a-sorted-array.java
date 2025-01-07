@@ -10,50 +10,39 @@ import java.util.*;
 // User function Template for Java
 
 class Solution {
+
     int countPairs(int arr[], int target) {
-        int i = 0, j = arr.length - 1, ans = 0;
-        
-        while (i < j) {
-            int sum = arr[i] + arr[j];
-            
-            if (sum == target) {
-                // Count duplicates for arr[i] and arr[j]
-                if (arr[i] == arr[j]) {
-                    // If arr[i] == arr[j], we can pick any two elements from the range [i, j]
-                    int count = j - i + 1;
-                    ans += (count * (count - 1)) / 2; // Combination of 2 elements from count
-                    break;
-                } else {
-                    int c1 = 1, c2 = 1;
-                    
-                    while (i < j && arr[i] == arr[i + 1]) {
-                        c1++;
-                        i++;
-                    }
-                    
-                    while (i < j && arr[j] == arr[j - 1]) {
-                        c2++;
-                        j--;
-                    }
-                    
-                    // Add all pairs formed by c1 and c2
-                    ans += c1 * c2;
-                    
-                    // Move pointers
+        int i=0, j=arr.length-1, ans=0;
+        while(i<j){
+            int sum=arr[i]+arr[j];
+            if(sum==target){
+                if(arr[i]==arr[j]){
+                    int count=j-i+1;
+                    ans+=(count*(count-1))/2;
+                    return ans;
+                }
+                else{
+                int c1=1, c2=1;
+                while(i<j && arr[i]==arr[i+1]){
                     i++;
+                    c1++;
+                }
+                
+                while(i<j && arr[j]==arr[j-1]){
+                    c2++;
                     j--;
                 }
-            } else if (sum < target) {
+                ans+=c1*c2;
                 i++;
-            } else {
                 j--;
             }
+            }
+            else if(sum<target)i++;
+            else j--;
         }
-        
         return ans;
     }
 }
-
 
 
 //{ Driver Code Starts.
