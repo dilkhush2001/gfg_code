@@ -20,9 +20,6 @@ class Geeks {
 
 // } Driver Code Ends
 
-
-// User function Template for Java
-
 class Solution {
     // Function to count the number of possible triangles.
     static int countTriangles(int arr[]) {
