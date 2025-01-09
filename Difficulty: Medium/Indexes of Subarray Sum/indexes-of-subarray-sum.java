@@ -32,7 +32,6 @@ class Main {
 // } Driver Code Ends
 
 
-
 class Solution {
     ArrayList<Integer> subarraySum(int[] arr, int target) {
         ArrayList<Integer> ans = new ArrayList<>();
