@@ -57,20 +57,6 @@ class ReverseInSize {
 // } Driver Code Ends
 
 
-/*node class of the linked list
-class Node
-{
-    int data;
-    Node next;
-    Node(int key)
-    {
-        data = key;
-        next = null;
-    }
-}
-
-*/
-
 class Solution {
     public static Node reverseKGroup(Node node, int k) {
        ArrayList<Integer> arr=new ArrayList<>();
