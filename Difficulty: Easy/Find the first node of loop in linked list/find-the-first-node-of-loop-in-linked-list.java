@@ -58,20 +58,6 @@ public class LinkedList {
 // } Driver Code Ends
 
 
-// User function Template for Java
-
-/* class Node
-{
-    int data;
-    Node next;
-
-    Node(int x)
-    {
-        data = x;
-        next = null;
-    }
-}*/
-
 class Solution {
     public static Node findFirstNode(Node head) {
         Node slow=head;
