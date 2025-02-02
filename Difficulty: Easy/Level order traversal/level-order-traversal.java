@@ -108,17 +108,6 @@ class GfG {
 // } Driver Code Ends
 
 
-/*
-class Node {
-    int data;
-    Node left, right;
-
-    Node(int item) {
-        data = item;
-        left = right = null;
-    }
-}
-*/
 class Solution {
     public ArrayList<ArrayList<Integer>> levelOrder(Node root) {
         ArrayList<ArrayList<Integer>> ans=new ArrayList<ArrayList<Integer>>();
