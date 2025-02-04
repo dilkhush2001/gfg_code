@@ -105,21 +105,6 @@ class GfG {
 // } Driver Code Ends
 
 
-
-
-// User function Template for Java
-
-/*class Node {
-    int data;
-    Node left;
-    Node right;
-    Node(int data) {
-        this.data = data;
-        left = null;
-        right = null;
-    }
-}*/
-
 class Solution {
     int ans;
     int height(Node root){
