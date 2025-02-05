@@ -124,13 +124,8 @@ class GfG {
 // } Driver Code Ends
 
 
-
-
 // User function Template for Java
 
-// function Template for Java
-
-// FUNCTION CODE
 /* A Binary Tree node
 class Node
 {
