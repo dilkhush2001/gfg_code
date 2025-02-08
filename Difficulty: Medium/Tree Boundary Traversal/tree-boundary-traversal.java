@@ -100,8 +100,6 @@ class Node
 }
 */
 
-
-
 class Solution {
     ArrayList<Integer> boundaryTraversal(Node node) {
         ArrayList <Integer> ar=new ArrayList <Integer>();
@@ -118,6 +116,7 @@ class Solution {
         
         return ar;
     }
+    
      void leftnode(Node root, ArrayList <Integer> ar){
         if(root==null)
             return ;
