@@ -112,21 +112,11 @@ System.out.println("~");
 class Solution {
     // Function to check whether a Binary Tree is BST or not.
     boolean isBST(Node root) {
-        return isBSTUtil(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+        return find(root, -1, (int)1e9+2);
     }
-
-    boolean isBSTUtil(Node root, int min, int max) {
-        // Base case: an empty tree is a BST
-        if (root == null) {
-            return true;
-        }
-
-        // Check if the current node's value is within the valid range
-        if (root.data <= min || root.data >= max) {
-            return false;
-        }
-
-        // Recursively check the left and right subtrees
-        return isBSTUtil(root.left, min, root.data) && isBSTUtil(root.right, root.data, max);
+    boolean find(Node root, int min, int max){
+        if(root==null)return true;
+        if(root.data<=min || root.data>=max)return false;
+        return find(root.left, min, root.data) && find(root.right, root.data, max);
     }
 }
