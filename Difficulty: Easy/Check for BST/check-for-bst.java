@@ -98,7 +98,9 @@ class GfG {
             else
                 System.out.println("false");
             t--;
-        }
+        
+System.out.println("~");
+}
     }
 }
 
@@ -110,12 +112,21 @@ class GfG {
 class Solution {
     // Function to check whether a Binary Tree is BST or not.
     boolean isBST(Node root) {
-        // code here.
-        return check(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+        return isBSTUtil(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
     }
-    private boolean check(Node root, int min, int max){
-        if(root==null)return true ;
-        if(root.data<=min || root.data>=max)return false;
-        return check(root.left, min, root.data) && check(root.right, root.data, max);
+
+    boolean isBSTUtil(Node root, int min, int max) {
+        // Base case: an empty tree is a BST
+        if (root == null) {
+            return true;
+        }
+
+        // Check if the current node's value is within the valid range
+        if (root.data <= min || root.data >= max) {
+            return false;
+        }
+
+        // Recursively check the left and right subtrees
+        return isBSTUtil(root.left, min, root.data) && isBSTUtil(root.right, root.data, max);
     }
 }
