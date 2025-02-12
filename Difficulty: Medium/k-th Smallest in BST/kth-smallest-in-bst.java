@@ -89,20 +89,6 @@ class GFG {
 // } Driver Code Ends
 
 
-// User function Template for Java
-
-// class Node
-// {
-//     int data;
-//     Node left, right;
-
-//     public Node(int d)
-//     {
-//         data = d;
-//         left = right = null;
-//     }
-// }
-
 class Solution {
     // Return the Kth smallest element in the given BST
     int c=0;
