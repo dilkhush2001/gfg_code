@@ -114,18 +114,6 @@ class GfG {
 }
 // } Driver Code Ends
 
-
-/*Complete the given function
-Node is as follows:
-class Tree{
-    int data;
-    Tree left,right;
-    Tree(int d){
-        data=d;
-        left=right=null;
-    }
-}*/
-
 class Tree {
     // Function to serialize a tree and return a list containing nodes of tree.
     ArrayList<Integer> ans;
