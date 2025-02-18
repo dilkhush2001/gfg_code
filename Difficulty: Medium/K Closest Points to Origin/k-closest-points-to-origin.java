@@ -4,8 +4,6 @@ import java.util.*;
 
 // } Driver Code Ends
 
-import java.util.Arrays;
-
 class Pair {
     int x, y;
     double d;
@@ -26,7 +24,7 @@ class Solution {
             a[idx++] = new Pair(tt[0], tt[1], Math.sqrt(tt[0] * tt[0] + tt[1] * tt[1]));
         }
 
-        Arrays.sort(a, (X, Y) -> Double.compare(X.d, Y.d)); // Corrected comparator
+        Arrays.sort(a, (X, Y) -> Double.compare(X.d, Y.d)); 
 
         int[][] ans = new int[k][2];
         for (int i = 0; i < k; i++) {
@@ -37,6 +35,7 @@ class Solution {
         return ans;
     }
 }
+
 
 
 //{ Driver Code Starts.
