@@ -61,22 +61,6 @@ public class Main {
 // } Driver Code Ends
 
 
-// User function Template for Java
-/*class Node
-{
-    int data;
-    Node next;
-
-    Node(int key)
-    {
-        data = key;
-        next = null;
-    }
-}
-*/
-
-// arr is an array of Nodes of the heads of linked lists
-
 class Solution {
     // Function to merge K sorted linked list.
     PriorityQueue<Integer> pq=new PriorityQueue<>();
