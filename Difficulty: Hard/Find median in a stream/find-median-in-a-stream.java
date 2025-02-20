@@ -29,7 +29,6 @@ public class Main {
 
 // } Driver Code Ends
 
-
 class Solution {
     // Max heap to store the smaller half of the numbers
     private PriorityQueue<Integer> maxheap = new PriorityQueue<>((a, b) -> b - a);
