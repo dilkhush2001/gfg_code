@@ -22,9 +22,6 @@ class GFG {
 
 
 
-
-//User function Template for Java
-
 class Solution{
     static int maxLength(String S){
         Stack<Integer> st=new Stack<>();
