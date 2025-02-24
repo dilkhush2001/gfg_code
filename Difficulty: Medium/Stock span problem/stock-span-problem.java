@@ -35,13 +35,6 @@ class Main {
 }
 // } Driver Code Ends
 
-class Pair{
-    int ele, idx;
-    Pair(int ele ,int idx){
-        this.ele=ele;
-        this.idx=idx;
-    }
-}
 
 class Solution {
     public ArrayList<Integer> calculateSpan(int[] arr) {
@@ -54,11 +47,11 @@ class Solution {
             }
             
             if (st.isEmpty()) 
-                ans.add(i + 1); // Entire span if no greater element is found
+                ans.add(i + 1); 
             else 
-                ans.add(i - st.peek()); // Difference of indices gives the span
+                ans.add(i - st.peek()); 
             
-            st.push(i); // Push the index instead of a Pair
+            st.push(i);
         }
         return ans;
     }
