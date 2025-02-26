@@ -25,7 +25,6 @@ public class Main {
 // } Driver Code Ends
 
 
-
 class Solution {
     public ArrayList<Integer> maxOfMins(int[] arr) {
         int n=arr.length;
