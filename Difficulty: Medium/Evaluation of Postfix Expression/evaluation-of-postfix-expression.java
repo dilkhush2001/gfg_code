@@ -19,9 +19,7 @@ class Solution {
                 flag=true;
                 str=str.substring(1);
             }
-            
-            
-            
+        
             if(str.length()==1 && !Character.isDigit(str.charAt(0))){
                 int n1=st.pop();
                 int n2=st.pop();
