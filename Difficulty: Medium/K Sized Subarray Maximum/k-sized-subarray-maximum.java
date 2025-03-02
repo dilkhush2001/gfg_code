@@ -45,9 +45,10 @@ class Solution {
         ArrayList<Integer> ans = new ArrayList<>();
         
         for (int i = 0; i < arr.length; i++) {
-            while (!q.isEmpty() && q.peekFirst() < i - k + 1) {
+             if (!q.isEmpty() && q.peekFirst() <= i - k) {
                 q.pollFirst();
             }
+
 
             // Remove elements smaller than the current one (they won't be the max)
             while (!q.isEmpty() && arr[q.peekLast()] <= arr[i]) {
