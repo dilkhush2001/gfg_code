@@ -39,6 +39,7 @@ public class Main {
 }
 // } Driver Code Ends
 
+
 class Solution {
     public ArrayList<Integer> maxOfSubarrays(int arr[], int k) {
         Deque<Integer> q = new LinkedList<>();  // Stores indices of elements
