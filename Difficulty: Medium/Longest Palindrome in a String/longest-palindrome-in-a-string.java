@@ -22,9 +22,6 @@ class GFG {
 
 
 
-
-//User function Template for Java
-
 class Solution{
     static String longestPalindrome(String S){
         String ans="";
