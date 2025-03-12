@@ -23,9 +23,6 @@ class GFG {
 }
 // } Driver Code Ends
 
-
-//Back-end complete function Template for Java
-
 class Solution {
     int[] dp;
      int minCostClimbingStairs(int[] cost) {
