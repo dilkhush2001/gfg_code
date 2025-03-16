@@ -38,19 +38,22 @@ public class Main {
 
 
 class Solution {
-    static int minJumps(int[] arr) {
-        // code here
-        if(arr[0]==0)return -1;
-        int max=0, jump=0, step=0;
-        for(int i=0;i<arr.length-1;i++){
-            max=Math.max(max, arr[i]+i);
+    static int minJumps(int[] nums) {
+        if(nums[0]==0)return -1;
+        int count=0;
+        int jump=0;
+        int max=jump;
+        int n=nums.length;
+        if(n==1)return 0;
+        for(int i=0;i<n-1;i++){
+            max=Math.max(nums[i]+i, max);
             if(jump==i){
-                if(arr[i]==0 && jump==max)return -1;
+                if(nums[i]==0 && jump==max)return -1;
                 jump=max;
-                step++;
+                count++;
             }
             
         }
-        return step;
+        return count;
     }
 }
