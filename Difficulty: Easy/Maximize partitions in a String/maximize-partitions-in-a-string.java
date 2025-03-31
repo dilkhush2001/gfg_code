@@ -17,7 +17,6 @@ public class Main {
 }
 // } Driver Code Ends
 
-
 class Solution {
     public int maxPartitions(String s) {
         // code here
