@@ -6,8 +6,6 @@ import java.util.*;
 
 // } Driver Code Ends
 
-
-
 class Solution {
     // Function to return Breadth First Search Traversal of given graph.
     public ArrayList<Integer> bfs(ArrayList<ArrayList<Integer>> adj) {
@@ -35,7 +33,6 @@ class Solution {
         return res;
     }
 }
-
 
 
 //{ Driver Code Starts.
