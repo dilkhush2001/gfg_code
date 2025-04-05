@@ -4,10 +4,10 @@ import java.util.*;
 class GFG {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int tc = scanner.nextInt(); // Number of test cases
+        int tc = scanner.nextInt();
         while (tc-- > 0) {
-            int n = scanner.nextInt(); // Number of rows
-            int m = scanner.nextInt(); // Number of columns
+            int n = scanner.nextInt();
+            int m = scanner.nextInt();
             char[][] grid = new char[n][m];
 
             // Read the grid input
@@ -17,8 +17,9 @@ class GFG {
                 }
             }
             Solution obj = new Solution();
-            int ans = obj.numIslands(grid);
+            int ans = obj.countIslands(grid);
             System.out.println(ans);
+            System.out.println("~");
         }
         scanner.close();
     }
@@ -27,8 +28,10 @@ class GFG {
 // } Driver Code Ends
 
 
+
+
 class Solution {
-    public int numIslands(char[][] grid) {
+    public int countIslands(char[][] grid) {
         if (grid == null || grid.length == 0) return 0;
         
         int m = grid.length;
@@ -37,9 +40,8 @@ class Solution {
         
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                if (grid[i][j] == '1') {
+                if (grid[i][j] == 'L') {
                     count++;
-                    // Use BFS to mark all parts of the island
                     bfs(grid, i, j, m, n);
                 }
             }
@@ -64,9 +66,9 @@ class Solution {
                 int newY = y + dir[1];
                 
                 // Check bounds and if it's part of the island
-                if (newX >= 0 && newX < m && newY >= 0 && newY < n && grid[newX][newY] == '1') {
+                if (newX >= 0 && newX < m && newY >= 0 && newY < n && grid[newX][newY] == 'L') {
                     queue.offer(new int[]{newX, newY});
-                    grid[newX][newY] = '0';
+                    grid[newX][newY] = 'W';
                 }
             }
         }
