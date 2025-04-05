@@ -28,8 +28,6 @@ class GFG {
 // } Driver Code Ends
 
 
-
-
 class Solution {
     public int countIslands(char[][] grid) {
         if (grid == null || grid.length == 0) return 0;
